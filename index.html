@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Cozy Adventure for My Love ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <!-- Main RPG Game Canvas -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Overlay filters for Sunset & Night transitions -->
+    <div id="ambient-overlay"></div>
+
+    <!-- Start / Introductory Fading Screen -->
+    <div id="start-screen">
+      <div class="intro-text-box">
+        <div id="intro-text-label" class="intro-text"></div>
+      </div>
+      <button id="start-btn" class="start-btn">BEGIN</button>
+      <div id="start-prompt" class="start-prompt">Walk to begin your story.</div>
+    </div>
+
+    <!-- Floating Interactive Alert Prompt (e.g. "Press E / Tap Interact") -->
+    <div id="interact-prompt">PRESS E TO INTERACT</div>
+
+    <!-- Simple dialogue box for NPCs like cats or butterflies -->
+    <div id="dialogue-box">
+      <p id="dialogue-text"></p>
+    </div>
+
+    <!-- UI Overlay for reading letters, scrolls, etc. -->
+    <div id="overlay-container">
+      <!-- 1. Envelope to click and open -->
+      <div id="envelope-view" class="envelope-wrapper">
+        <div class="envelope-seal">❤️</div>
+      </div>
+
+      <!-- 2. Standard Letter Sheet (Location 1 & 2) -->
+      <div id="letter-view" class="letter-paper">
+        <h2 id="letter-title" class="letter-title">Our Beginning</h2>
+        <div id="letter-body" class="letter-body"></div>
+        <div id="letter-img-frame" class="letter-img-container">
+          <img id="letter-img" class="letter-img" src="" alt="Memory">
+        </div>
+        <p id="letter-caption" class="letter-caption"></p>
+        <button id="close-letter-btn" class="close-btn">CLOSE</button>
+      </div>
+
+      <!-- 3. Giant Scroll Paper Sheet (Location 3) -->
+      <div id="scroll-view" class="scroll-paper">
+        <h2 id="scroll-title" class="scroll-title">When You Said Yes</h2>
+        <div id="scroll-body" class="scroll-body"></div>
+        <div id="scroll-images" class="scroll-images-grid">
+          <!-- Populated programmatically in game.js -->
+        </div>
+        <button id="close-scroll-btn" class="close-btn">ROLL BACK</button>
+      </div>
+
+      <!-- 4. Birthday Hall Castle Sheet (Location 4) -->
+      <div id="castle-view" class="castle-letter-paper">
+        <h2 class="letter-title" style="border:none; margin-bottom: 5px;">Happy Birthday!</h2>
+        
+        <!-- Large pink button at the center -->
+        <button id="reveal-birthday-btn" class="hall-pink-btn">TAP TO OPEN NOTE</button>
+
+        <!-- Hidden long happy birthday letter -->
+        <div id="birthday-note" class="birthday-note-container">
+          <p id="birthday-note-text" style="white-space: pre-wrap; line-height: 1.7rem; font-size: 1.1rem; color: #5d4037;"></p>
+        </div>
+
+        <!-- 8 picture frames grid -->
+        <h3 style="font-size: 0.85rem; font-family: 'Press Start 2P', monospace; margin: 15px 0 10px; color:#ff7597;">Our Memory Board</h3>
+        <div id="castle-gallery" class="castle-gallery">
+          <!-- 8 photo frames generated programmatically in game.js -->
+        </div>
+
+        <button id="close-castle-btn" class="close-btn">CONTINUE</button>
+      </div>
+    </div>
+
+    <!-- Mobile Virtual Controls -->
+    <div id="mobile-controls">
+      <!-- 4-direction D-pad layout -->
+      <div class="dpad-container">
+        <div></div>
+        <div id="btn-up" class="mobile-btn btn-up">▲</div>
+        <div></div>
+        <div id="btn-left" class="mobile-btn btn-left">◀</div>
+        <div></div>
+        <div id="btn-right" class="mobile-btn btn-right">▶</div>
+        <div></div>
+        <div id="btn-down" class="mobile-btn btn-down">▼</div>
+        <div></div>
+      </div>
+      <!-- Action button on the right -->
+      <div class="action-btn-container">
+        <button id="btn-interact" class="btn-interact">INTERACT</button>
+      </div>
+    </div>
+
+    <!-- Final Credits Screen -->
+    <div id="credits-screen">
+      <h1 class="credits-header">THE END</h1>
+      <div id="credits-lines-container"></div>
+    </div>
+
+    <!-- Spawn hearts container -->
+    <div id="heart-spawner" class="heart-spawner"></div>
+  </div>
+
+  <!-- Run script as ES module -->
+  <script type="module" src="game.js"></script>
+</body>
+</html>
