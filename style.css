@@ -510,7 +510,7 @@ canvas {
 /* Mobile Virtual D-Pad / Arrows */
 #mobile-controls {
   position: absolute;
-  bottom: 50px;
+  bottom: 75px;
   left: 5%;
   width: 90%;
   display: none;
